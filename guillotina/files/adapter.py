@@ -263,6 +263,6 @@ class DBFileStorageManagerAdapter:
         blobfile = file._blob.open("w")
         await blobfile.async_del()
         delattr(file, "_blob")
-        delattr(obj, obj.__name__)
+        delattr(obj, self.field.__name__)
         self.field.context.register()
         return True
